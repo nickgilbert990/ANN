@@ -37,7 +37,7 @@ namespace NeuralNetworkCSharp.Synapses
 
         public void UpdateWeight(double learningRate, double delta)
         {
-            throw new InvalidOperationException("It is not allowed to call this method on Input Connecion");
+            throw new InvalidOperationException("Update weight is invalid for the input synapse");
         }
     }
 }

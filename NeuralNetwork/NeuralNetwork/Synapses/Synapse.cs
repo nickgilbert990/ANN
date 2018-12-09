@@ -17,7 +17,7 @@ namespace NeuralNetworkCSharp.Synapses
         public double Weight { get; set; }
 
         /// <summary>
-        /// Weight that connection had in previous itteration.
+        /// Weight that connection had in previous iteration.
         /// Used in training process.
         /// </summary>
         public double PreviousWeight { get; set; }
@@ -68,7 +68,7 @@ namespace NeuralNetworkCSharp.Synapses
         /// <summary>
         /// Update weight.
         /// </summary>
-        /// <param name="learningRate">Chossen learning rate.</param>
+        /// <param name="learningRate">Chosen learning rate.</param>
         /// <param name="delta">Calculated difference for which weight of the connection needs to be modified.</param>
         public void UpdateWeight(double learningRate, double delta)
         {

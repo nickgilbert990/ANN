@@ -19,7 +19,7 @@ namespace NeuralNetwork
             network.AddLayer(layerFactory.CreateNeuralLayer(3, new RectifiedActivationFuncion(), new WeightedSumFunction()));
             network.AddLayer(layerFactory.CreateNeuralLayer(1, new SigmoidActivationFunction(0.7), new WeightedSumFunction()));
 
-            network.PushExpectedValues(
+/*            network.PushExpectedValues(
                 new double[][] {
                     new double[] { 0 },
                     new double[] { 1 },
@@ -42,7 +42,7 @@ namespace NeuralNetwork
                 }, 10000);
 
             network.PushInputValues(new double[] { 1054, 54, 1 });
-            var outputs = network.GetOutput();
+            var outputs = network.GetOutput(); */
         }
-    }
+    } 
 }

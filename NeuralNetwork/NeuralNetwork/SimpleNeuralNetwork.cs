@@ -119,7 +119,9 @@ namespace NeuralNetworkCSharp
         }
 
         /// <summary>
-        /// Hellper function that creates input layer of the neural network.
+        /// Helper function that creates the input layer of the neural network based on the
+        /// parameter numberOfInputNeurons and for each neuron in the input layer
+        /// an input synapse is initialised and linked.
         /// </summary>
         private void CreateInputLayer(int numberOfInputNeurons)
         {
