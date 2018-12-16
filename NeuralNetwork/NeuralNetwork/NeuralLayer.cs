@@ -17,6 +17,7 @@ namespace NeuralNetworkCSharp
         }
 
         /// <summary>
+        /// 
         /// Connecting two layers.
         /// </summary>
         public void ConnectLayers(NeuralLayer inputLayer)

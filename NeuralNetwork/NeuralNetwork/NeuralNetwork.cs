@@ -10,7 +10,7 @@ namespace NeuralNetworkCSharp
     /// <summary>
     /// Neural Network implementation.
     /// </summary>
-    public class SimpleNeuralNetwork
+    public class NeuralNetwork
     {
         private NeuralLayerFactory _layerFactory;
 
@@ -20,23 +20,33 @@ namespace NeuralNetworkCSharp
         internal double[][] _expectedResult;
 
         /// <summary>
-        /// Constructor of the Neural Network.
-        /// Note:
-        /// Initialy input layer with defined number of inputs will be created.
+        /// Neural Network constructor.
+        /// Initially an input layer with a defined number of inputs is created by
+        /// calling the CreateInputLayer method. This method also creates the
+        /// input synapses and links them to each neuron in the input layer 
         /// </summary>
-        /// <param name="numberOfInputNeurons">
-        /// Number of neurons in input layer.
-        /// </param>
-        public SimpleNeuralNetwork(int numberOfInputNeurons)
+        public NeuralNetwork(int numberOfInputNeurons)
         {
             _layers = new List<NeuralLayer>();
             _neuronErrors = new Dictionary<int, double[]>();
             _layerFactory = new NeuralLayerFactory();
 
-            // Create input layer that will collect inputs.
+            // Create the input layer that will collect inputs from the input synapses.
             CreateInputLayer(numberOfInputNeurons);
 
             _learningRate = 2.95;
+        }
+
+        /// <summary>
+        /// This helper function creates the input layer of the neural network based on the
+        /// parameter numberOfInputNeurons and for each neuron in the input layer
+        /// an input synapse is initialised and linked to a neuron (one synapse per neuron).
+        /// </summary>
+        private void CreateInputLayer(int numberOfInputNeurons)
+        {
+            var inputLayer = _layerFactory.CreateNeuralLayer(numberOfInputNeurons, new RectifiedActivationFuncion(), new WeightedSumFunction());
+            inputLayer.Neurons.ForEach(x => x.AddInputSynapse(0));
+            this.AddLayer(inputLayer);
         }
 
         /// <summary>
@@ -116,18 +126,6 @@ namespace NeuralNetworkCSharp
                     HandleHiddenLayers();
                 }
             }
-        }
-
-        /// <summary>
-        /// Helper function that creates the input layer of the neural network based on the
-        /// parameter numberOfInputNeurons and for each neuron in the input layer
-        /// an input synapse is initialised and linked.
-        /// </summary>
-        private void CreateInputLayer(int numberOfInputNeurons)
-        {
-            var inputLayer = _layerFactory.CreateNeuralLayer(numberOfInputNeurons, new RectifiedActivationFuncion(), new WeightedSumFunction());
-            inputLayer.Neurons.ForEach(x => x.AddInputSynapse(0));
-            this.AddLayer(inputLayer);
         }
 
         /// <summary>

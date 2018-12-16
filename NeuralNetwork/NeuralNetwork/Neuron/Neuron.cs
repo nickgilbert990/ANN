@@ -28,10 +28,8 @@ namespace NeuralNetworkCSharp.Neuron
         public Guid Id { get; private set; }
 
         /// <summary>
-        /// Calculated partial derivate in previous iteration of training process.
+        /// Neuron constructor
         /// </summary>
-        public double PreviousPartialDerivate { get; set; }
-
         public Neuron(IActivationFunction activationFunction, IInputFunction inputFunction)
         {
             Id = Guid.NewGuid();
@@ -41,6 +39,25 @@ namespace NeuralNetworkCSharp.Neuron
             _activationFunction = activationFunction;
             _inputFunction = inputFunction;
         }
+
+        /// <summary>
+        /// Input Layer neurons just receive input values.
+        /// For this they need to have connections.
+        /// This function adds this kind of connection to the neuron.
+        /// </summary>
+        /// <param name="inputValue">
+        /// Initial value that will be "pushed" as an input to connection.
+        /// </param>
+        public void AddInputSynapse(double inputValue)
+        {
+            var inputSynapse = new InputSynapse(this, inputValue);
+            Inputs.Add(inputSynapse);
+        }
+
+        /// <summary>
+        /// Calculated partial derivate in previous iteration of training process.
+        /// </summary>
+        public double PreviousPartialDerivate { get; set; }
 
         /// <summary>
         /// Connect two neurons. 
@@ -75,20 +92,6 @@ namespace NeuralNetworkCSharp.Neuron
         public double CalculateOutput()
         {
             return _activationFunction.CalculateOutput(_inputFunction.CalculateInput(this.Inputs));
-        }
-
-        /// <summary>
-        /// Input Layer neurons just receive input values.
-        /// For this they need to have connections.
-        /// This function adds this kind of connection to the neuron.
-        /// </summary>
-        /// <param name="inputValue">
-        /// Initial value that will be "pushed" as an input to connection.
-        /// </param>
-        public void AddInputSynapse(double inputValue)
-        {
-            var inputSynapse = new InputSynapse(this, inputValue);
-            Inputs.Add(inputSynapse);
         }
 
         /// <summary>
