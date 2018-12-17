@@ -4,7 +4,7 @@ using System;
 namespace NeuralNetworkCSharp.Synapses
 {
     /// <summary>
-    /// Implementation of Synapse (connection).
+    /// Implementation of Synapse (inter neuron connection).
     /// </summary>
     public class Synapse : ISynapse
     {

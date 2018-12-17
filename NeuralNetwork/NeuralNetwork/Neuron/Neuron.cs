@@ -16,12 +16,12 @@ namespace NeuralNetworkCSharp.Neuron
         private IInputFunction _inputFunction;
 
         /// <summary>
-        /// Input connections of the neuron.
+        /// Neuron input connections.
         /// </summary>
         public List<ISynapse> Inputs { get; set; }
 
         /// <summary>
-        /// Output connections of the neuron.
+        /// Neuron output connections.
         /// </summary>
         public List<ISynapse> Outputs { get; set; }
 
@@ -41,13 +41,11 @@ namespace NeuralNetworkCSharp.Neuron
         }
 
         /// <summary>
-        /// Input Layer neurons just receive input values.
-        /// For this they need to have connections.
-        /// This function adds this kind of connection to the neuron.
+        /// Input Layer neurons receive input values from the InputSynapse. This method
+        /// adds the InputSynapse connection to the input layer neuron and sets "inputValue"
+        /// Note: as this prototype is extended to use real world inputs the inputValue
+        /// will need to be derived from external logic.  
         /// </summary>
-        /// <param name="inputValue">
-        /// Initial value that will be "pushed" as an input to connection.
-        /// </param>
         public void AddInputSynapse(double inputValue)
         {
             var inputSynapse = new InputSynapse(this, inputValue);
@@ -60,10 +58,9 @@ namespace NeuralNetworkCSharp.Neuron
         public double PreviousPartialDerivate { get; set; }
 
         /// <summary>
-        /// Connect two neurons. 
-        /// This neuron is the output neuron of the connection.
+        /// This method connects two neurons via a synapse. The inputNeuron parameter
+        /// will be input neuron of the newly created connection.
         /// </summary>
-        /// <param name="inputNeuron">Neuron that will be input neuron of the newly created connection.</param>
         public void AddInputNeuron(INeuron inputNeuron)
         {
             var synapse = new Synapse(inputNeuron, this);
@@ -72,10 +69,9 @@ namespace NeuralNetworkCSharp.Neuron
         }
 
         /// <summary>
-        /// Connect two neurons. 
-        /// This neuron is the input neuron of the connection.
+        /// This method connects two neurons via a synapse. The outputNeuron parameter
+        /// will be output neuron of the newly created connection.
         /// </summary>
-        /// <param name="outputNeuron">Neuron that will be output neuron of the newly created connection.</param>
         public void AddOutputNeuron(INeuron outputNeuron)
         {
             var synapse = new Synapse(this, outputNeuron);

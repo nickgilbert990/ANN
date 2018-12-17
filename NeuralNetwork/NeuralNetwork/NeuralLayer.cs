@@ -5,7 +5,7 @@ using System.Linq;
 namespace NeuralNetworkCSharp
 {
     /// <summary>
-    /// Implementation of the single layer in Artificial Neural Network.
+    /// Implementation of a single layer in Artificial Neural Network.
     /// </summary>
     public class NeuralLayer
     {
@@ -17,8 +17,10 @@ namespace NeuralNetworkCSharp
         }
 
         /// <summary>
-        /// 
-        /// Connecting two layers.
+        /// Flattens the inputLayer list (using SelectMany), generates a new layer with a lambda function
+        /// and connects the neurons (each neuron has n output neurons) of the new layer to the existing layer
+        /// using input and output neuron GUIDs - the inter neuron connection data is held in the
+        /// connecting synapse.
         /// </summary>
         public void ConnectLayers(NeuralLayer inputLayer)
         {
