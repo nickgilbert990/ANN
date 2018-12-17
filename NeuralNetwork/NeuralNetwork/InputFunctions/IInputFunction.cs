@@ -1,7 +1,7 @@
-﻿using NeuralNetworkCSharp.Synapses;
+﻿using PrototypeNeuralNetwork.Synapses;
 using System.Collections.Generic;
 
-namespace NeuralNetworkCSharp.InputFunctions
+namespace PrototypeNeuralNetwork.InputFunctions
 {
     /// <summary>
     /// Interface for Input Functions.

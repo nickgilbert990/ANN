@@ -1,7 +1,7 @@
-﻿using NeuralNetworkCSharp.ActivationFunctions;
-using NeuralNetworkCSharp.InputFunctions;
+﻿using PrototypeNeuralNetwork.ActivationFunctions;
+using PrototypeNeuralNetwork.InputFunctions;
 
-namespace NeuralNetworkCSharp
+namespace PrototypeNeuralNetwork
 {
     /// <summary>
     /// Factory used to create layers.

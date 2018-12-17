@@ -1,5 +1,5 @@
 ﻿
-namespace NeuralNetworkCSharp.ActivationFunctions
+namespace PrototypeNeuralNetwork.ActivationFunctions
 {
     /// <summary>
     /// Interface for activation functions.

@@ -1,8 +1,8 @@
-﻿using NeuralNetworkCSharp.Neuron;
+﻿using PrototypeNeuralNetwork.Neuron;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace NeuralNetworkCSharp
+namespace PrototypeNeuralNetwork
 {
     /// <summary>
     /// Implementation of a single layer in Artificial Neural Network.

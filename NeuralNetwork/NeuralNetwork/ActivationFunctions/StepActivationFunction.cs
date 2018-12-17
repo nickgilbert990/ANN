@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace NeuralNetworkCSharp.ActivationFunctions
+namespace PrototypeNeuralNetwork.ActivationFunctions
 {
     /// <summary>
     /// Implementation of Step Activation Function.

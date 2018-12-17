@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
-using NeuralNetworkCSharp.Synapses;
+using PrototypeNeuralNetwork.Synapses;
 using System.Linq;
 
-namespace NeuralNetworkCSharp.InputFunctions
+namespace PrototypeNeuralNetwork.InputFunctions
 {
     /// <summary>
     /// Implementation of Weighted Sum Function.

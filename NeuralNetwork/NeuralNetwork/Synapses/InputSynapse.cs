@@ -1,7 +1,7 @@
-﻿using NeuralNetworkCSharp.Neuron;
+﻿using PrototypeNeuralNetwork.Neuron;
 using System;
 
-namespace NeuralNetworkCSharp.Synapses
+namespace PrototypeNeuralNetwork.Synapses
 {
     public class InputSynapse : ISynapse
     {

@@ -1,11 +1,11 @@
-﻿using NeuralNetworkCSharp.ActivationFunctions;
-using NeuralNetworkCSharp.InputFunctions;
-using NeuralNetworkCSharp.Synapses;
+﻿using PrototypeNeuralNetwork.ActivationFunctions;
+using PrototypeNeuralNetwork.InputFunctions;
+using PrototypeNeuralNetwork.Synapses;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace NeuralNetworkCSharp
+namespace PrototypeNeuralNetwork
 {
     /// <summary>
     /// Neural Network implementation.

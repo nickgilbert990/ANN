@@ -1,7 +1,7 @@
-﻿using NeuralNetworkCSharp.Neuron;
+﻿using PrototypeNeuralNetwork.Neuron;
 using System;
 
-namespace NeuralNetworkCSharp.Synapses
+namespace PrototypeNeuralNetwork.Synapses
 {
     /// <summary>
     /// Implementation of Synapse (inter neuron connection).

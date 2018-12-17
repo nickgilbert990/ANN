@@ -1,8 +1,8 @@
-﻿using NeuralNetworkCSharp.Synapses;
+﻿using PrototypeNeuralNetwork.Synapses;
 using System;
 using System.Collections.Generic;
 
-namespace NeuralNetworkCSharp.Neuron
+namespace PrototypeNeuralNetwork.Neuron
 {
     /// <summary>
     /// Interface for Neuron.

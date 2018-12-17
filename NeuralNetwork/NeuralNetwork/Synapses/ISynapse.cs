@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace NeuralNetworkCSharp.Synapses
+namespace PrototypeNeuralNetwork.Synapses
 {
     /// <summary>
     /// Interface for synapses (connections).
