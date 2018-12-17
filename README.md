@@ -1,2 +1,2 @@
 # ANN
-Simple Neural Network
+Prototype Neural Network
